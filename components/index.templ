@@ -1,0 +1,78 @@
+package components
+
+ 
+templ navbar() {
+	<div class="navbar bg-base-100 shadow-md fixed top-0 ">
+    <div class="navbar-start">
+    
+    </div>
+    <div class="navbar-center">
+        <a class="btn btn-ghost text-xl">GoTH Admin</a>
+    </div>
+    <div class="navbar-end">
+
+        <button class="btn btn-ghost btn-circle">
+            <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
+                    <circle cx="12" cy="10" r="3" />
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+                <span class="badge badge-xs badge-primary indicator-item"></span>
+            </div>
+        </button>
+    </div>
+</div>
+}
+ 
+
+templ controlbar() {
+	<div class="btm-nav">
+    <!-- HOME -->
+    <!-- <button hx-get="/home" hx-target="#content" class="active"> -->
+    <button hx-get="/home" hx-target="#content">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+    </button>
+
+    <!-- TRANSACTIONS -->
+    <button hx-get="/transactions" hx-target="#content" class="active">
+        <!-- <button> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+            <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+        </svg>
+    </button>
+
+    <!-- STOCKS     -->
+    <!-- <button hx-get="/stocks" hx-target="#content" class="active"> -->
+    <button hx-get="/stocks" hx-target="#content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.2 7.8l-7.7 7.7-4-4-5.7 5.7" />
+            <path d="M15 7h6v6" />
+        </svg>
+    </button>
+
+</div>
+}
+
+templ Index() {
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.17/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Goth</title>
+</head>
+
+@navbar()
+    // <div hx-get="/home" hx-trigger="load" hx-target="#content" class="pt-16"></div>
+    <div id="content" class="p-5"></div>
+@controlbar()
+}

@@ -9,6 +9,6 @@ templ generate
 
 # Build the Go program
 echo "🚀 deploying ..."
-go build -o ./tmp/main .
+go run *.go
 
 echo "✨ done"
